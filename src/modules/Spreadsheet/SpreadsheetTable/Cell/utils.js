@@ -50,6 +50,6 @@ const fastCirculateValidator = memoize(circulateValidator);
 export const getOperandsArray = (formula = '') => {
   const operandsArray = formula
     .split(/[+/*-\s]/)
-    .filter((operand) => operand != '');
+    .filter((operand) => operand !== '');
   return operandsArray;
 };

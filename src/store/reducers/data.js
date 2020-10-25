@@ -1,5 +1,5 @@
-import { SET_VALUE, SET_FORMULA } from "../actions/actionTypes";
-import { updateData } from "./utils/dataUtils";
+import { SET_VALUE, SET_FORMULA } from '../actions/actionTypes';
+import { updateData } from './utils/dataUtils';
 
 const INITIAL_STATE = {};
 
@@ -15,7 +15,6 @@ export default (state = INITIAL_STATE, action) => {
         },
       };
       updatedData = updateData(action.label, updatedData);
-      debugger;
       return updatedData;
 
     case SET_FORMULA:
@@ -27,7 +26,6 @@ export default (state = INITIAL_STATE, action) => {
         },
       };
       updatedData = updateData(action.label, updatedData);
-      debugger;
       return updatedData;
     default:
       return state;

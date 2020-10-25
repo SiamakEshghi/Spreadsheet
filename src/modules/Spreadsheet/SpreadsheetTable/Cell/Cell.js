@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import PropTypes from "prop-types";
+import React, { useState, useEffect, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   setValue,
@@ -8,10 +8,10 @@ import {
   setTitle,
   setError,
   setActiveCell,
-} from "../../../../store/actions";
-import TooltipWrapper from "../../../sharedModules/TooltipWrapper/TooltipWrapper";
-import { circulateValidator } from "./utils";
-import styles from "./Cell.module.css";
+} from '../../../../store/actions';
+import TooltipWrapper from '../../../sharedModules/TooltipWrapper/TooltipWrapper';
+import { circulateValidator } from './utils';
+import styles from './Cell.module.css';
 
 const Cell = (props) => {
   const { label } = props;
@@ -24,11 +24,11 @@ const Cell = (props) => {
     if (activeCell.label === label) {
       dispatch(setTitle(label, data[label]?.value, formulaInput));
     }
-  }, [data, activeCell, formulaInput, label]);
+  }, [data, activeCell, formulaInput, label, dispatch]);
 
   useEffect(() => {
     setTitleWithData();
-  }, [formulaInput, activeCell]);
+  }, [setTitleWithData]);
 
   const setValueHandler = (e) => {
     const value = Number(e.target.value);
@@ -54,7 +54,7 @@ const Cell = (props) => {
       className={styles.ValueInput}
       type="number"
       value={
-        data[label]?.value || data[label]?.value === 0 ? data[label]?.value : ""
+        data[label]?.value || data[label]?.value === 0 ? data[label]?.value : ''
       }
       disabled={data[label]?.formula}
       onChange={setValueHandler}
@@ -65,7 +65,7 @@ const Cell = (props) => {
     <div className={styles.Formula}>
       <input
         className={styles.FormulaInput}
-        value={formulaInput || ""}
+        value={formulaInput || ''}
         onChange={(e) => setFormulaInput(e.target.value)}
       />
       <button className={styles.FormulBtn} onClick={submitFormula}>
@@ -76,7 +76,7 @@ const Cell = (props) => {
 
   return (
     <div className={styles.Cell} onClick={cellOnclickHandler}>
-      {label === "a1" ? (
+      {label === 'a1' ? (
         <>
           <TooltipWrapper tooltipText="Enter value.(disabled if formula is set)">
             {valueInputComponent}

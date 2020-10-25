@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 
 import SpreadsheetTable from './SpreadsheetTable/SpreadsheetTable';
 import Title from './Title/Title';
-import styles from './Spreadsheet.module.css';
 
 export default (props) => {
   return (
