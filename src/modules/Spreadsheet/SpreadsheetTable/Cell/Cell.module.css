@@ -15,11 +15,11 @@
 
 .Formula {
   display: flex;
+  height: 50%;
 }
 
 .FormulaInput {
   width: 60%;
-  height: 50%;
   border: none;
   background-color: rgb(255, 229, 204);
 }

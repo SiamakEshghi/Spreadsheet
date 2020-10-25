@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Table } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Container, Table } from 'react-bootstrap';
 
-import Cell from "./Cell/Cell";
-import labels from "../../../utils/labels";
-import styles from "./Table.module.css";
+import Cell from './Cell/Cell';
+import labels from './utils/labels';
+import styles from './SpreadsheetTable.module.css';
 
-export default (props) => {
+const SpreadsheetTable = (props) => {
   const getHead = () => {
     return (
       <tr>
@@ -46,3 +46,9 @@ export default (props) => {
     </Container>
   );
 };
+
+SpreadsheetTable.prototype = {
+  labels: PropTypes.object,
+};
+
+export default SpreadsheetTable;
