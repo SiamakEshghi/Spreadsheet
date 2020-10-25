@@ -1,6 +1,6 @@
 export const circulateValidator = (
   label,
-  formula = "",
+  formula = '',
   data,
   relativeLabelsArray = []
 ) => {
@@ -47,7 +47,9 @@ function memoize(fn) {
 
 const fastCirculateValidator = memoize(circulateValidator);
 
-const getOperandsArray = (formula = "") => {
-  const operandsArray = formula.split(/[+\/*-\s]/);
+export const getOperandsArray = (formula = '') => {
+  const operandsArray = formula
+    .split(/[+/*-\s]/)
+    .filter((operand) => operand != '');
   return operandsArray;
 };
